@@ -12,7 +12,7 @@ RUN echo "export PATH=\"/tmp/anaconda3/bin:$PATH\"" >> ~/.bashrc && \
     echo "alias python='/tmp/anaconda3/bin/python'" >> ~/.bashrc && \            
     echo "alias conda='/tmp/anaconda3/bin/conda'" >> ~/.bashrc && \
     echo "alias jupyter='/tmp/anaconda3/bin/jupyter'" >> ~/.bashrc && \
-    echo "alias jupyterhub='/tmp/anaconda3/bin/jupyterhub'" >> ~/.bashrc
+    echo "alias jupyterhub='/tmp/anaconda3/bin/jupyterhub'" >> ~/.bashrc && \
     echo "Install RStudio and Jupyter(hub/labs) and dependencies" && \
     source ~/.bashrc && \
     yum update -y && yum groupinstall -y "Development tools" && yum install epel-release -y && \
