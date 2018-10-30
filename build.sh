@@ -6,7 +6,7 @@
 # check if Docker is present
 if [ -x "$(command -v docker)" ]; then
     echo "Found Docker... preparing container"
-    docker build -t jh-da .
+    docker build -t jh-da-base-image .
 else
     echo "Please install Docker: https://docs.docker.com/install/"
 fi
