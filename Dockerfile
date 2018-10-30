@@ -2,7 +2,6 @@ FROM centos:centos7.4.1708
 
 LABEL maintainer="m.s.vanvliet@lacdr.leidenuniv.nl"
 
-ARG notebook_repo=https://github.com/lacdr-tox/basic-programming-in-drug-discovery
 ARG anaconda_installer=Anaconda3-5.2.0-Linux-x86_64.sh
 ARG rstudio_server_installer=rstudio-server-rhel-1.1.456-x86_64.rpm
 
@@ -18,7 +17,6 @@ RUN echo "export PATH=\"/tmp/anaconda3/bin:$PATH\"" >> ~/.bashrc && \
     source ~/.bashrc && \
     yum update -y && yum groupinstall -y "Development tools" && yum install epel-release -y && \
     yum install -y cairo-devel libjpeg-turbo-devel nodejs openssl nano htop git R && \
-    git clone $notebook_repo ~/notebooks/ && \
     npm install -g configurable-http-proxy && \
     curl -O https://repo.continuum.io/archive/$anaconda_installer && bash $anaconda_installer -b -f -p /tmp/anaconda3 && rm -rf $anaconda_installer && \
     conda install -n base conda && \
